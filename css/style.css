@@ -1,0 +1,277 @@
+@import url("./main.css");
+
+html {
+  font-size: calc(16px + 0.4vw);
+}
+body {
+  background-color: var(--primary-color);
+  width: 100vw;
+  margin-inline: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.deactive {
+  display: none !important;
+}
+h1 {
+  font-family: belleza;
+  color: white;
+}
+nav {
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 10;
+}
+
+.menu-container {
+  background-color: var(--tertiary-color);
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  display: flex;
+  left: 0;
+  gap: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.nav-link {
+  font-family: inter;
+  font-weight: bold;
+  padding: 0.5rem 0.825rem;
+  color: var(--font-color);
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+.nav-link.selected {
+  background-color: var(--primary-color);
+  border-radius: 100vw;
+}
+.nav-link:not(.selected):hover {
+  text-decoration: underline;
+}
+.menu-btn {
+  background-color: transparent;
+  border: none;
+}
+
+/* < hero section> */
+.hero-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  overflow-x: hidden;
+  flex-direction: column-reverse;
+}
+.hero-desc {
+  color: var(--font-color);
+  font-family: belleza;
+  padding: 1rem;
+  height: 15rem;
+  max-height: 50vh;
+  background-color: var(--primary-color);
+  font-size: min(70vw, 2.875rem);
+  text-align: center;
+  position: absolute;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+.hero-desc p {
+  max-width: 23ch;
+  line-height: 4rem;
+}
+
+.hero-brand-desktop {
+  display: none;
+}
+.hero-brand-mobile {
+  position: absolute;
+  width: 100vw;
+  z-index: -2;
+}
+.hero-brand-mobile img {
+  width: 100%;
+  object-fit: contain;
+  object-position: top left;
+}
+hero-img {
+  align-self: center;
+  z-index: -1;
+  height: 100%;
+}
+.hero-img img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+/*<clothes section>*/
+.card-img-container {
+  width: 100vw;
+  position: relative;
+  margin-top: 6rem;
+}
+.card-img-container::before {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
+  background-color: var(--secondary-color);
+}
+.card-img {
+  max-width: 81vw;
+  display: block;
+}
+.card-img.left-img {
+  border-radius: 0 1.75rem 1.75rem 0;
+}
+.card-img.right-img {
+  border-radius: 1.75rem 0 0 1.75rem;
+  margin-left: auto;
+}
+.card-text {
+  padding: 2rem;
+  color: var(--font-color);
+  background-color: var(--secondary-color);
+}
+.card-title {
+  font-family: belleza;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 3.4rem;
+  max-width: 20ch;
+  font-weight: bold;
+}
+.card-desc {
+  font-family: nunito;
+  font-weight: 300;
+  font-size: 1rem;
+  max-width: 38ch;
+  text-align: justify;
+}
+/*</clothes section>*/
+
+/* </hero section>*/
+
+/* desktop */
+@media (min-width: 768px) {
+  html {
+    font-size: calc(8px + 0.1vw);
+  }
+
+  body {
+    padding-inline: 3vw;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+  nav {
+    justify-content: center;
+  }
+
+  .menu-container {
+    display: flex !important;
+    flex-direction: row;
+    position: initial;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 100vw;
+    padding: 0.825rem 2rem;
+  }
+
+  /* < hero section> */
+  .hero-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-desc {
+    height: initial;
+    max-height: initial;
+    background-color: transparent;
+    display: initial;
+    font-size: 3.15rem;
+    text-align: center;
+    position: initial;
+    width: fit-content;
+    transform: translateY(-50%);
+  }
+
+  .hero-brand-desktop {
+    display: initial;
+    font-family: parisienne;
+    color: var(--font-color);
+    font-size: 5.125rem;
+    position: absolute;
+    transform: rotate(-15deg);
+    top: 1rem;
+    left: 0%;
+    z-index: -3;
+    transition: left 1s ease-out;
+  }
+  .hero-brand-desktop.active {
+    left: 100%;
+  }
+
+  .brand-hidder {
+    font-family: parisienne;
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+    font-size: 5.125rem;
+    padding: 3rem;
+    position: absolute;
+    transform: rotate(-15deg);
+    top: 1rem;
+    left: 0%;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  .hero-brand-mobile {
+    display: none;
+  }
+  .hero-img {
+    position: relative;
+    height: 100%;
+  }
+  .hero-img img {
+    object-fit: cover;
+    height: 100%;
+    width: initial;
+    min-width: 100%;
+  }
+
+  /* </hero section>*/
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: calc(12px + 0.4vw);
+  }
+}

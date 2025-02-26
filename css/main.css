@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #4e0109;
+  --secondary-color: #65000c;
+  --tertiary-color: #000000;
+  --font-color: #ffffff;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* button:hover {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("../assets/fonts/nunito.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "belleza";
+  src: url("../assets/fonts/belleza.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "inter";
+  src: url("../assets/fonts/inter.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "parisienne";
+  src: url("../assets/fonts/parisienne.ttf") format("truetype");
+}
