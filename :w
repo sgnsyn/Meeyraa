@@ -14,7 +14,7 @@ body {
 .main-section {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  min-height: 100dvh;
 }
 .deactive {
   display: none !important;
@@ -78,17 +78,17 @@ nav {
   display: flex;
   width: 100%;
   flex: 1;
-  overflow: hidden;
+  overflow-x: hidden;
   flex-direction: column-reverse;
 }
 .hero-desc {
   color: var(--font-color);
   font-family: belleza;
-  font-size: 2.5rem;
   padding: 1rem;
   height: 15rem;
   max-height: 50vh;
   background-color: var(--primary-color);
+  font-size: min(70vw, 2.875rem);
   text-align: center;
   position: absolute;
   width: 100vw;
@@ -113,13 +113,13 @@ nav {
   object-fit: contain;
   object-position: top left;
 }
-.hero-img {
+hero-img {
   align-self: center;
   z-index: -1;
   height: 100%;
 }
 .hero-img img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   height: 100%;
   width: 100%;
