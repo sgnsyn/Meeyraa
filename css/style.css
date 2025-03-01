@@ -19,10 +19,6 @@ body {
 .deactive {
   display: none !important;
 }
-h1 {
-  font-family: belleza;
-  color: white;
-}
 nav {
   padding: 2rem;
   display: flex;
