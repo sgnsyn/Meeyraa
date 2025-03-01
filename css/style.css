@@ -652,8 +652,4 @@ nav {
   stroke: var(--font-color);
 }
 
-#content {
-  text-align: center;
-  display: none;
-}
 /*</loading screen>*/
