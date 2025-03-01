@@ -20,7 +20,9 @@ window.addEventListener("load", () => {
   heroImg.classList.add("active");
   heroDesc.classList.add("active");
   mobBrand.classList.add("active");
-  loadScreen.classList.add("hidden");
+  setTimeout(() => {
+    loadScreen.classList.add("hidden");
+  }, 2000);
 });
 window.addEventListener("resize", () => {
   mainSection.style.height = window.innerHeight;
