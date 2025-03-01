@@ -5,78 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meeyraa</title>
     <style>
-      /*<loading screen>*/
-      #loading-container {
+      .loader {
+        background-color: black;
         position: fixed;
-        width: 100%;
+        text-align: center;
+        z-index: 100;
         height: 100%;
-        background-color: var(--tertiary-color);
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1000;
-        will-change: transform;
+      }
+      .loader h1 {
+        color: white;
+        font-family: "arial";
+        font-weight: 800;
+        font-size: min(4em, 10vw);
+      }
+      .bullets {
+        animation: dots 2s steps(3, end) infinite;
       }
 
-      #loading-container.hidden {
-        display: none;
+      @keyframes dots {
+        0%,
+        20% {
+          color: rgba(0, 0, 0, 0);
+          text-shadow:
+            0.25em 0 0 rgba(0, 0, 0, 0),
+            0.5em 0 0 rgba(0, 0, 0, 0);
+        }
+        40% {
+          color: white;
+          text-shadow:
+            0.25em 0 0 rgba(0, 0, 0, 0),
+            0.5em 0 0 rgba(0, 0, 0, 0);
+        }
+        60% {
+          text-shadow:
+            0.25em 0 0 white,
+            0.5em 0 0 rgba(0, 0, 0, 0);
+        }
+        80%,
+        100% {
+          text-shadow:
+            0.25em 0 0 white,
+            0.5em 0 0 white;
+        }
       }
-
-      .loading-svg {
-        width: 10rem;
-        height: 10rem;
-      }
-      .loading-svg > circle {
-        stroke: var(--primary-color);
-      }
-      .loading-svg g > circle {
-        stroke: var(--font-color);
-      }
-
-      /*</loading screen>*/
     </style>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="loading-container">
-      <svg class="loading-svg" viewBox="0 0 160 160">
-        <circle
-          cx="80"
-          cy="80"
-          r="55"
-          fill="none"
-          stroke="black"
-          stroke-width="40"
-        />
-        <g transform="translate(80, 80)">
-          <circle
-            cx="0"
-            cy="0"
-            r="55"
-            fill="none"
-            stroke="white"
-            stroke-width="35"
-            stroke-dasharray="0, 345"
-            stroke-linecap="round"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              from="0"
-              to="360"
-              begin="0s"
-              dur="0.75s"
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="stroke-dasharray"
-              values="0, 345; 172.5, 172.5; 0, 345"
-              dur="1.5s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-      </svg>
+    <div class="loader">
+      <h1>LOADING <span class="bullets">.</span></h1>
     </div>
     <div class="main-section">
       <nav>
