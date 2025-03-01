@@ -5,7 +5,7 @@ const mainSection = document.querySelector(".main-section");
 const heroImg = document.getElementById("hero-img");
 const heroDesc = document.querySelector(".hero-desc");
 const mobBrand = document.querySelector(".hero-brand-mobile");
-
+const loadScreen = document.getElementById("loading-container");
 function openMobileMenu() {
   const menuContainer = document.querySelector(".menu-container");
   menuContainer?.classList.remove("deactive");
@@ -20,6 +20,7 @@ window.addEventListener("load", () => {
   heroImg.classList.add("active");
   heroDesc.classList.add("active");
   mobBrand.classList.add("active");
+  loadScreen.classList.add("hidden");
 });
 window.addEventListener("resize", () => {
   mainSection.style.height = window.innerHeight;

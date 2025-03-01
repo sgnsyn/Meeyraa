@@ -623,3 +623,37 @@ nav {
   }
 }
 /* =========================== */
+
+/*<loading screen>*/
+
+#loading-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--tertiary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#loading-container.hidden {
+  display: none;
+}
+
+.loading-svg {
+  width: 10rem;
+  height: 10rem;
+}
+.loading-svg > circle {
+  stroke: var(--primary-color);
+}
+.loading-svg g > circle {
+  stroke: var(--font-color);
+}
+
+#content {
+  text-align: center;
+  display: none;
+}
+/*</loading screen>*/
