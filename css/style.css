@@ -94,6 +94,15 @@ nav {
   width: 100vw;
   display: grid;
   place-content: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity 1s ease-in-out 1.8s,
+    transform 1s ease-in-out 1.8s;
+}
+.hero-desc.active {
+  transform: translateY(0%);
+  opacity: 1;
 }
 .hero-desc p {
   max-width: 23ch;
@@ -103,10 +112,23 @@ nav {
 .hero-brand-desktop {
   display: none;
 }
+.hero-brand {
+  perspective: 1000px;
+  z-index: -3;
+}
 .hero-brand-mobile {
   position: absolute;
   width: 100vw;
-  z-index: -2;
+  z-index: -3;
+  opacity: 0;
+  transform: translateZ(100px) scale(1.5);
+  transition:
+    transform 1s ease-in-out 0.2s,
+    opacity 1s ease-in 0.2s;
+}
+.hero-brand-mobile.active {
+  transform: translateZ(0px) scale(0.95);
+  opacity: 1;
 }
 .hero-brand-mobile img {
   width: 100%;
@@ -117,12 +139,24 @@ nav {
   align-self: center;
   z-index: -1;
   height: 100%;
+  perspective: 1000px;
 }
 .hero-img img {
+  --td: 1s;
   object-fit: contain;
-  object-position: center;
+  object-position: bottom center;
   height: 100%;
   width: 100%;
+  transform: translateY(100%);
+  transition:
+    opacity var(--td) ease-in-out 0.9s,
+    transform var(--td) ease-in-out 0.9s,
+    scale var(--td) ease-in-out 0.9s;
+}
+.hero-img img.active {
+  opacity: 1;
+  scale: 1;
+  transform: translateY(0%);
 }
 /* </hero section>*/
 
@@ -271,6 +305,14 @@ nav {
     text-align: center;
     position: initial;
     width: fit-content;
+
+    transform: translateY(-30%);
+    transition:
+      opacity 0.5s ease-in-out 2.7s,
+      transform 0.5s ease-in-out 2.7s;
+  }
+  .hero-desc.active {
+    opacity: 1;
     transform: translateY(-50%);
   }
 
@@ -280,14 +322,17 @@ nav {
     color: var(--font-color);
     font-size: 5.125rem;
     position: absolute;
-    transform: rotate(-15deg);
-    top: 1rem;
-    left: 0%;
+    transform: rotate(-15deg) translate(-100%, -70%);
+    left: 50%;
     z-index: -3;
-    transition: left 1s ease-out;
+    opacity: 0;
+    transition:
+      left 1s ease-out 1.7s,
+      opacity 1s ease-out 1.7s;
   }
   .hero-brand-desktop.active {
-    left: 100%;
+    left: 150%;
+    opacity: 1;
   }
 
   .brand-hidder {
@@ -295,11 +340,11 @@ nav {
     color: var(--primary-color);
     background-color: var(--primary-color);
     font-size: 5.125rem;
-    padding: 3rem;
+    padding: 2rem;
     position: absolute;
-    transform: rotate(-15deg);
+    transform: rotate(-15deg) translate(-90%, -70%);
+    left: 50%;
     top: 1rem;
-    left: 0%;
     z-index: -2;
     pointer-events: none;
   }
@@ -310,13 +355,23 @@ nav {
   .hero-img {
     position: relative;
     height: 100%;
+    display: grid;
+    place-content: center;
   }
   .hero-img img {
+    --td: 1s;
+    --d: 0.4s;
     position: absolute;
     object-fit: cover;
     object-position: top left;
     height: 100%;
     width: fit-content;
+    opacity: 0;
+    scale: 0.5;
+    transition:
+      opacity var(--td) ease-in-out var(--d),
+      transform var(--td) ease-in-out var(--d),
+      scale var(--td) ease-in-out var(--d);
   }
 
   /* </hero section>*/
@@ -453,11 +508,24 @@ nav {
     z-index: 2;
     transform: none;
     bottom: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition:
+      opacity 1s ease-in-out 1.8s,
+      transform 1s ease-in-out 1.8s;
+  }
+
+  .hero-desc.active {
+    transform: translateY(0%);
+    opacity: 1;
   }
   .hero-desc p {
     line-height: 3ch;
   }
-
+  .hero-desc p {
+    max-width: 23ch;
+    line-height: 3ch;
+  }
   .hero-container {
     position: relative;
     display: grid;
