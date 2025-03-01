@@ -21,8 +21,8 @@ window.addEventListener("load", () => {
   heroDesc.classList.add("active");
   mobBrand.classList.add("active");
   setTimeout(() => {
-    loadScreen.classList.add("hidden");
-  }, 2000);
+    loadScreen.classList.add("deactive");
+  }, 1500);
 });
 window.addEventListener("resize", () => {
   mainSection.style.height = window.innerHeight;

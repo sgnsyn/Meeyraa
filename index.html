@@ -6,19 +6,17 @@
     <title>Meeyraa</title>
     <style>
       .loader {
-        background-color: black;
+        background-color: #4e0109;
         position: fixed;
         text-align: center;
         z-index: 100;
         height: 100%;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        place-content: center;
       }
       .loader h1 {
         color: white;
-        font-family: "arial";
         font-weight: 800;
         font-size: min(4em, 10vw);
       }
@@ -56,7 +54,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="loader">
+    <div class="loader" id="loading-container">
       <h1>LOADING <span class="bullets">.</span></h1>
     </div>
     <div class="main-section">
