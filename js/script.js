@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
   mobBrand.classList.add("active");
   setTimeout(() => {
     loadScreen.classList.add("deactive");
-  }, 1500);
+  }, 750);
 });
 window.addEventListener("resize", () => {
   mainSection.style.height = window.innerHeight;
